@@ -3,6 +3,4 @@
 mv /srv/minecraft_server.jar /data/minecraft_server.jar
 echo "eula=true" > /data/eula.txt
 
-echo $@
-
-eval "$@"
+exec $@
