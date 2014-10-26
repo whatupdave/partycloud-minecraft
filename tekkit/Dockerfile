@@ -11,6 +11,6 @@ ADD start.sh /srv/start.sh
 WORKDIR /data
 EXPOSE 25565
 
-CMD ["java -Xms1G -Xmx1G -jar minecraft_server.jar nogui"]
+CMD ["java -Xms2G -Xmx2G -jar Tekkit.jar nogui"]
 
 ENTRYPOINT ["/bin/bash","/srv/start.sh"]
