@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp /minecraft/server.jar /data/server.jar
+echo "eula=true" > /data/eula.txt
+
+exec $@
