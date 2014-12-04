@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -f server.properties ]; then
+  echo "level-type=BIOMESOP" > server.properties
+fi
+
 cp --update /srv/*.jar /data
 cp --update -r /srv/config /data
 cp --update -r /srv/libraries /data
