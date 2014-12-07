@@ -7,6 +7,7 @@ RUN curl -s http://www.creeperrepo.net/FTB2/modpacks%5EDirewolf20_1_6_4%5E1_0_23
     unzip /tmp/ftb-dw20 -d /srv && \
     rm /tmp/ftb-dw20.zip
 
+RUN cd /srv/mods && curl -s http://big-reactors.com/download/alpha/BigReactors-0.3.4A2.jar -O
 ADD server /srv/server
 
 WORKDIR /data
