@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ ! -f server.properties ]; then
+  # biomes o plenty!
+  echo "level-type=BIOMESOP" > server.properties
+fi
+
+echo "eula=true" > /data/eula.txt
+
+cp --update /srv/*.jar /data
+cp --update -r /srv/config /data
+cp --update -r /srv/libraries /data
+cp --update -r /srv/mods /data
+
+exec $@
