@@ -1,14 +1,17 @@
 NAME = partycloud/minecraft
 
-.PHONY: all build_ftb-dw20 ftb-dw20-17 build_spigot build_tekkit build_vanilla release
+.PHONY: all build_ftb-dw20 ftb-dw20-17 build_ftb-infinity build_spigot build_tekkit build_vanilla release
 
-all: build_ftb-dw20 ftb-dw20-17 build_spigot build_tekkit build_vanilla
+all: build_ftb-dw20 ftb-dw20-17 build_ftb-infinity build_spigot build_tekkit build_vanilla
 
 build_ftb-dw20:
 	docker build -t $(NAME):ftb-dw20 ftb-dw20
 
 build_ftb-dw20-17:
 	docker build -t $(NAME):ftb-dw20-17 ftb-dw20-17
+
+build_ftb-infinity:
+	docker build -t $(NAME):ftb-infinity ftb-infinity
 
 build_spigot:
 	docker build -t $(NAME):spigot spigot
@@ -22,6 +25,7 @@ build_vanilla:
 release:
 	docker push $(NAME):ftb-dw20
 	docker push $(NAME):ftb-dw20-17
+	docker push $(NAME):ftb-infinity
 	docker push $(NAME):spigot
 	docker push $(NAME):tekkit
 	docker push $(NAME):vanilla
