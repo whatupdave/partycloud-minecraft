@@ -1,7 +1,7 @@
 FROM java
 MAINTAINER Dave Newman <dave@assembly.com> (@whatupdave)
 
-RUN curl -s http://ftb.cursecdn.com/FTB2/modpacks/FTBInfinity/1_5_1/FTBInfinityServer.zip \
+RUN curl http://www.creeperrepo.net/FTB2/modpacks%5EFTBInfinity%5E1_6_2%5EFTBInfinityServer.zip \
          -o /tmp/ftb-infinity.zip && \
     mkdir -p /srv && \
     unzip /tmp/ftb-infinity -d /srv && \
@@ -11,7 +11,7 @@ ADD server /srv/server
 
 RUN cd /srv && /bin/sh ./FTBInstall.sh
 RUN ls -la /srv
-RUN mv /srv/FTBServer-1.7.10-1395.jar /srv/server.jar
+RUN mv /srv/FTBServer-1.7.10-1408.jar /srv/server.jar
 
 WORKDIR /data
 EXPOSE 25565
