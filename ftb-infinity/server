@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ ! -f server.properties ]; then
-  # biomes o plenty!
   echo "Initializing a new server"
 
+  # biomes o plenty!
   echo "level-type=BIOMESOP" > server.properties
   echo "eula=true" > /data/eula.txt
 
