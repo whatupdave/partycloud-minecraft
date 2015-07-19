@@ -1,7 +1,6 @@
-FROM alpine:3.2
+FROM java
 MAINTAINER Dave Newman <dave@assembly.com> (@whatupdave)
 
-RUN apk --update add curl openjdk7 unzip
 RUN curl http://ftb.cursecdn.com/FTB2/modpacks/FTBInfinity/1_7_0/FTBInfinityServer.zip \
          -o /tmp/ftb-infinity.zip && \
     mkdir -p /srv && \
@@ -11,7 +10,6 @@ RUN curl http://ftb.cursecdn.com/FTB2/modpacks/FTBInfinity/1_7_0/FTBInfinityServ
 ADD server /srv/server
 
 RUN cd /srv && /bin/sh ./FTBInstall.sh
-RUN ls -la /srv
 RUN mv /srv/FTBServer-1.7.10-1448.jar /srv/server.jar
 
 WORKDIR /data
