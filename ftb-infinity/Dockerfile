@@ -1,7 +1,7 @@
 FROM java
 MAINTAINER Dave Newman <dave@assembly.com> (@whatupdave)
 
-RUN curl http://ftb.cursecdn.com/FTB2/modpacks/FTBInfinity/1_7_0/FTBInfinityServer.zip \
+RUN curl http://ftb.cursecdn.com/FTB2/modpacks/FTBInfinity/1_8_2/FTBInfinityServer.zip \
          -o /tmp/ftb-infinity.zip && \
     mkdir -p /srv && \
     unzip /tmp/ftb-infinity -d /srv && \
